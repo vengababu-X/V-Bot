@@ -36,14 +36,7 @@ V-Bot prioritizes **reliability, graceful fallback, and system-level design**, m
 
 ---
 
-## 🧠 System Architecture (Conceptual Flow)
-
-┌─────────────┐ │   User      │ │   Input     │ └──────┬──────┘ │ ▼ ┌─────────────────┐ │   V-Bot Core    │ │ Terminal Agent  │ └──────┬──────────┘ │ ├── Online Mode (API Available) │       │ │       ▼ │   AI Response │ └── Offline Mode (Fallback) │ ▼ Predefined Intelligence │ ▼ Final Terminal Output
-
-✔ The system **never crashes**  
-✔ Always produces a response  
-✔ Automatically adapts to availability  
-
+#
 ---
 
 ## ⚙️ Key Features
@@ -86,6 +79,38 @@ You > what can you do AI  > I can operate in offline and online modes.
 
 ---
 
+## 🧠 System Architecture (Conceptual Flow)
+
+```text
+User Input
+    |
+    v
++---------------------+
+|     V-Bot Core      |
+|  Terminal Agent     |
++----------+----------+
+           |
+           v
+   API Availability Check
+           |
+     +-----+-----+
+     |           |
+     v           v
+ Online Mode   Offline Mode
+ (API OK)     (Fallback)
+     |           |
+     v           v
+ AI Response  Predefined Logic
+      \           /
+       \         /
+        +-------+
+            |
+            v
+   Final Terminal Output
+✔ The system **never crashes**  
+✔ Always produces a response  
+✔ Automatically adapts to availability  
+---
 ## 🚀 Getting Started
 
 ### Install dependencies
